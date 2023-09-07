@@ -11,6 +11,7 @@
   <version>1.0-SNAPSHOT</version>
   <name>SpringMVC Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  
   <dependencies>
 
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
@@ -47,9 +48,10 @@
       <artifactId>jstl</artifactId>
       <version>1.2</version>
     </dependency>
-
+    
 
   </dependencies>
+  
   <build>
     <finalName>SpringMVC</finalName>
   </build>
