@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -14,16 +15,12 @@ public class MyController {
         return "first_view";
     }
     @RequestMapping("/askDetails")
-    public String askEmployeeDetails(){
+    public String askEmployeeDetails(Model model){
+        model.addAttribute("employee", new Employee());
         return "ask_details";
     }
     @RequestMapping("/showDetails")
-    public String showDetails(HttpServletRequest request, Model model){
-        String empName = request.getParameter("employeeName");
-        empName = "Mr. " + empName;
-        model.addAttribute("nameAttribute", empName);
-
-
+    public String showDetails(@ModelAttribute("employee") Employee employee){
 
         return "show_details";
     }
