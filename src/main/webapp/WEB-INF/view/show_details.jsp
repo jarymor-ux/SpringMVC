@@ -1,5 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-
+<html>
 <head>
     
 </head>
@@ -18,5 +19,15 @@
     <br>
     Your car: ${employee.carBrand}
     <br>
+    Language(s):
+    <ul> <%--unordered list--%>
+
+        <c:forEach var="lang" items="${employee.languages}">
+
+            <li>  ${lang}  </li>        <%--list item--%>
+
+        </c:forEach>
+    </ul>
+    Phone number: ${employee.phoneNumber}
 </body>
 </html>
